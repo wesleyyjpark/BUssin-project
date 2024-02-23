@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Roboto;
+}
+nav{
+  overflow: hidden;
+  background: lightgray;
+  line-height: 30px;
+
+}
+nav a{
+  float: left;
+  display: block;
+  width: 100px;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  
+}
+
+nav a:hover{
+  background: #ddd;
+  color: #000;
+}
+
+nav.active{
+  background: black;
+}
+
+nav input[type=text]{
+  float: right;
+  padding: 6px;
+  border: none; 
+  margin-top: 16px;
+  margin-right: 100px;
+  font-size: 17px;
+  border-radius: 10px;
+}
