@@ -1,23 +1,29 @@
-import csv
 import sqlite3
 
+#database for adding new food ratings
 class FoodRating:
-    def __init__(self, location, businessName, item, rating, comments):
+    def __init__(self, location, businessName, item, rating, comments, username):
         self.location = location
         self.businessName = businessName
         self.item = item
         self.rating = rating
         self.comments = comments
+        self.username = username
         self.addNewRating()
         self.updateAvg()
 
+    #adds the rating to database of all ratings
     def addNewRating(self):
-        file = open('./databases/ratings.csv', 'a', newline='')
-        writer = csv.writer(file)
-        newInput = [self.location, self.businessName, self.item, self.rating, self.comments]
-        writer.writerow(newInput)
-        file.close()
+        conn = sqlite3.connect('./databases/allRatings.db')
+        cur = conn.cursor()
+        cur.execute('CREATE TABLE IF NOT EXISTS ratings (location TEXT, business_name TEXT, item TEXT, rating REAL, comments TEXT, username TEXT)')
+        newRating = [self.location, self.businessName, self.item, self.rating, self.comments, self.username]
+        cur.execute('INSERT INTO ratings (location, business_name, item, rating, comments, username) VALUES (?,?,?,?,?,?)', newRating)
+        conn.commit()
+        cur.close()
+        conn.close()
     
+    #either adds or updates the database with the new rating
     def updateAvg(self):
         conn = sqlite3.connect('./databases/avgFoodRating.db')
         cur = conn.cursor()
@@ -38,16 +44,30 @@ class FoodRating:
         cur.close()
         conn.close()
         
-input = FoodRating('GSU', 'Basho', 'sushi', 5, 'it is good')
+#FoodRating(location:String, business_name:String, item:String, rating:Float, comments:String, username:String)
+#testInput = FoodRating('GSU', 'Basho', 'sushi', 5.0, 'it is good', 'Andrew Ting')
 
-conn = sqlite3.connect('./databases/avgFoodRating.db')
-cur = conn.cursor()
-cur.execute('SELECT * FROM ratings')
-print(cur.fetchall())
-""" #This clears out the db entries for testing
-cur.execute('DELETE FROM ratings')
-conn.commit()
+conn_avg = sqlite3.connect('./databases/avgFoodRating.db')
+conn_all = sqlite3.connect('./databases/allRatings.db')
+cur_avg = conn_avg.cursor()
+cur_all = conn_all.cursor()
+#prints out the database in rows
+cur_avg.execute('SELECT * FROM ratings')
+data = cur_avg.fetchall()
+for i in data:
+    print(i)
+cur_all.execute('SELECT * FROM ratings')
+data = cur_all.fetchall()
+for i in data:
+    print(i)
+#This clears out the db entries for testing
+    """
+cur_avg.execute('DELETE FROM ratings')
+cur_all.execute('DELETE FROM ratings')
+conn_avg.commit()
+conn_all.commit()
 """
-cur.close()
-conn.close()
-        
+cur_avg.close()
+cur_all.close()
+conn_avg.close()
+conn_all.close()
