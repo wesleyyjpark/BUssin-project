@@ -22,9 +22,8 @@ def updateAvg(location, businessName, item, rating) -> None:
     cur = conn.cursor()
     cur.execute('CREATE TABLE IF NOT EXISTS ratings (location TEXT, business_name TEXT, item TEXT, avg_rating REAL, num_inputs INTEGER)')
     cur.execute('SELECT * FROM ratings WHERE location=? AND business_name=? AND item=?',(location, businessName, item))
-    selection = cur.fetchone()
-    if selection is None:
-            cur.execute('INSERT INTO ratings (location, business_name, item, avg_rating, num_inputs) VALUES (?,?,?,?,?)', (location, businessName, item, rating, 1))
+    if cur.fetchone() is None:
+        cur.execute('INSERT INTO ratings (location, business_name, item, avg_rating, num_inputs) VALUES (?,?,?,?,?)', (location, businessName, item, rating, 1))
     else:
         cur.execute('SELECT avg_rating FROM ratings WHERE location=? AND business_name=? AND item=?', (location, businessName, item))
         avg = cur.fetchone()[0]
