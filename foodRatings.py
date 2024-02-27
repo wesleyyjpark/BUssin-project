@@ -48,7 +48,10 @@ def returnNTop(num: int, location=None, businessName=None) -> list:
         cur.execute('SELECT * FROM ratings WHERE location=? ORDER BY avg_rating DESC', (location,))
     else:
         cur.execute('SELECT * FROM ratings ORDER BY avg_rating DESC')
-    return cur.fetchmany(num)
+    nTop = cur.fetchmany(num)
+    cur.close()
+    conn.close()
+    return nTop
          
 #To add new ratings call the func:
 #addNewRating(location:String, business_name:String, item:String, rating:Float, comments:String, username:String)
