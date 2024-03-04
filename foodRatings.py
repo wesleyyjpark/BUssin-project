@@ -16,7 +16,7 @@ def newRating(location, businessName, item, rating, comments, username):
     cur.close()
     conn.close()
 
-#removes the rating to database of all ratings
+#removes the rating to database of all ratings <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def removeRating():
 
 #either adds or updates the database with the new rating
