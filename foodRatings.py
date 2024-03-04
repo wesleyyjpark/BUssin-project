@@ -15,7 +15,10 @@ def newRating(location, businessName, item, rating, comments, username):
     conn.commit()
     cur.close()
     conn.close()
-    
+
+#removes the rating to database of all ratings
+def removeRating():
+
 #either adds or updates the database with the new rating
 def updateAvg(location, businessName, item, rating) -> None:
     conn = sqlite3.connect('./databases/avgFoodRating.db')
