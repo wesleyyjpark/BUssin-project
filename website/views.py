@@ -2,6 +2,8 @@ from flask import Blueprint, render_template, request, flash
 from flask_login import login_required, current_user
 from .models import Review
 from . import db
+from .foodRatings import addNewRating
+import sqlite3
 
 views = Blueprint('views', __name__)
 
@@ -11,7 +13,13 @@ def home():
 
 @views.route('/reviews')
 def reviews():
-    return render_template('./reviews.html', user=current_user)
+    conn = sqlite3.connect('database.db')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM ratings")
+    data = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template('./reviews.html', user=current_user, data=data)
 
 @views.route('/write-review', methods=['GET', 'POST'])
 def write_review():
@@ -22,17 +30,12 @@ def write_review():
         item = request.form.get("item-names")
         rating = request.form.get("rate")
         comment = request.form.get('review')
-        print(location)
-        print(vendor)
-        print(category)
-        print(item)
-        print(rating)
-        print(comment)
         if category == None and item == None:
             flash('Please select all fields', category='error')
         else:
             new_review = Review(location=location, vendor=vendor, category=category, item=item, rating=int(rating), comments=comment, user_id=current_user.id)
             db.session.add(new_review)
+            addNewRating(location, vendor, category, item, int(rating))
             db.session.commit()
             flash('Review submitted!', category='success')
     

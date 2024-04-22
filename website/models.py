@@ -19,3 +19,14 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     username = db.Column(db.String(150), unique=True)
     reviews = db.relationship('Review')
+    
+'''
+class Avg(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(150))
+    vendor = db.Column(db.String(150))
+    category = db.Column(db.String(150))
+    item = db.Column(db.String(150))
+    avg = db.Column(db.Float)
+    total = db.Column(db.Integer)
+'''
