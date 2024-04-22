@@ -30,8 +30,10 @@ def write_review():
         item = request.form.get("item-names")
         rating = request.form.get("rate")
         comment = request.form.get('review')
-        if category == None and item == None:
+        if location == None or vendor == None or category == None or item == None or (vendor[len(vendor)-11::] != "Dining Hall" and item == None):
             flash('Please select all fields', category='error')
+        elif rating == None:
+            flash('Please select a rating', category='error')
         else:
             new_review = Review(location=location, vendor=vendor, category=category, item=item, rating=int(rating), comments=comment, user_id=current_user.id)
             db.session.add(new_review)
