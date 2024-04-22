@@ -14,11 +14,59 @@ var selections = {
             "Coffee, Tea & More": ["Freshly Brewed Coffee", "Caffe Misto", "Matcha Green Tea Latte", "London Fog Tea Latte", "Royal English Breakfast Tea Latte", "Chai Latte", "Teavana Brewed Tea", "Honey Citrus Mint Tea", "White Hot Chocolate", "Hot Chocolate", "Caramel Apple Spice", "Syrup Creme"],
             "Iced Coffee, Tea & More": ["Iced Coffee", "Cold Brew Coffee", "Vanilla Sweet Cream Cold Brew", "Salted Caramel Cream Cold Brew", "Cinnamon Caramel Cream Cold Brew", "Chocolate Cream Cold Brew", "Iced Chai Latte", "Iced Matcha Grean Tea Latte", "Teavana Shaken Iced Tea", "Teavana Shaken Iced Tea Lemonade", "Iced Peach Green Tea", "Iced Peach Green Tea Lemonade", "Iced Shaken Matcha Lemonade", "Lemonade"],
             "Hot Espresso Beverages": ["Espresso", "Espresso Macchiato", "Caffe Americano", "Flat White", "Caffe Latte", "Caffe Mocha", "White Chocolate Mocha", "Caramel Macchiato", "Cinnamon Dolce Latte", "Cappuchino"],
-            "Iced Espresso Beverages": ["Espresso Over Ice", "Iced Caffe Americano", "Iced Caffe Latte", "Iced Caramel Macchiato", "Iced Caffe Mocha", "Iced Flat White", "Iced White Chocolate Mocha", "Iced Cinnamon Dolce Latte", "Iced Cappuchino", "Iced Shaken Espresso", "Iced Brown Sugar Oatmilk Shaken Espresso", "Iced Hazelnut Oatmilk Shaken Espresso"]
+            "Iced Espresso Beverages": ["Espresso Over Ice", "Iced Caffe Americano", "Iced Caffe Latte", "Iced Caramel Macchiato", "Iced Caffe Mocha", "Iced Flat White", "Iced White Chocolate Mocha", "Iced Cinnamon Dolce Latte", "Iced Cappuchino", "Iced Shaken Espresso", "Iced Brown Sugar Oatmilk Shaken Espresso", "Iced Hazelnut Oatmilk Shaken Espresso"],
+            "Frappuchino": ["Coffee Frappuccino", "Caramel Frappuccino Blended Coffee", "Mocha Frappuchino Blended Coffee", "Strawberry Frappuchino", "Java Chip Frappuccino", "Vanilla Bean Creme Frappuccino", "Double Chocolaty Chip Creme Frappuccino", "Matcha Green Tea Creme Frappuccino", "White Chocolate Mocha Frappuccino Blended Coffee", "Caffe Vanilla Frappuccino Blended Coffee", "Chai Creme Frappuccino Blended Creme", "Mocha Cookie Crumble Frappuccino", "Caramel Ribbon Crunch Frappuccino"],
+            "Starbucks Refreshers": ["Pineapple Passionfruit Starbucks Refreshers Beverage", "Mango Dragonfruit Starbucks Refreshers Beverage", "Strawberry Acai Starbucks Refreshers Beverage", "Paradise Drink Starbucks Refreshers Beverage", "Dragon Drink Starbucks Refreshers Beverage", "Pink Drink Starbucks Refreshers Beverage", "Mango Dragonfruit Refreshers Lemonade", "Strawberry Acai Refresher Lemonade", "Pineapple Passionfruit Lemonade Starbucks Refreshers Beverage", "Frozen Strawberry Acai Lemonade Starbucks Refreshers Beverage", "Frozen Mango Dragonfruit Lemonade Starbucks Refreshers Beverage", "Frozen Pineapple Passionfruit Lemonade Starbucks Refreshers Beverage"],
+            "Breakfast": ["Bacon & Gruyere Sous Vide Egg Bites", "Egg White & Roasted Red Pepper Sous Vide Egg Bites", "Kale & Portabella Mushroom Sous Vide Egg Bites", "Impossible Breakfast Sandwich", "Double-Smoked Bacon, Cheddar & Egg Sandwich", "Bacon, Gouda & Egg Sandwich", "Sausage, Cheddar & Egg Sandwich", "Turkey Bacon, Cheddar & Egg White Breakfast Sandwich", "Bacon, Sausage & Egg Wrap", "Spinach, Feta & Egg White Wrap", "Rolled & Steel Cut Oatmeal"],
+            "Sandwiches & Paninis": ["Turkey & Pesto Panini", "Tomato & Mozzarella", "Ham & Swiss Panini", "Crispy Grilled Cheese"],
+            "Scones, Doughnuts, Danishes & Cakes": ["Cinnamon Coffee Cake", "Iced Lemon Pound Loaf", "Pumpkin Loaf", "Banana Nut Loaf", "Cheese Danish", "Glazed Doughnut", "Petite Vanilla Bean Scone", "Blueberry Scone"],
+            "Cookies, Brownies, Cake Pops & Bars": ["Chocolate Chip Cookie", "Double Chocolate Brownie", "Chocolate Cake Pop", "Cookies & Cream Cake Pop", "Birthday Cake Pop"],
+            "Croissants & Muffins": ["Blueberry Muffin", "Chocolate Croissant", "Butter Croissant", "Ham & Swiss Croissant"]
+        },
+        "Bay State Underground": {
+            "Bay State Grill": ["Underground Burger", "Char-Grilled Burger", "Beyond Burger", "Crispy Chicken Sandiwch"],
+            "Bay State Wraps & Salads": ["Caesar Salad", "Crispy Chicken Caesar Wrap", "Crispy Chicken Buffalo Caesar Wrap"],
+            "Bay State Sweet Desserts": ["Cookies", "Cheesecakes", "Tiramisu Cake"]
+            //check again when restocked
+        },
+        "Marciano's Dining Hall": {
+            "Bakery": [],
+            "Brick Oven": [],
+            "Deli": [],
+            "Gluten Free Kitchen": [],
+            "Grill": [],
+            "International": [],
+            "Mediterranean": [],
+            "Paseo": [],
+            "Saute": [],
+            "Vegan": []
         }
     },
     "Central Campus":{
-    
+        "Law School Cafe": {
+            "Breakfast Sandwiches & Pastries": ["Sausage in Session Sausage Egg & Cheese with Fig Jam", "Bacon & Order Bacon Egg & Cheese with Avocado", "The Verdict Egg & Cheese Bagel with Basil, Pesto, Cheddar Cheese, Avocado and Sundried Tomato", "Bagel", "Chocolate Croissant", "Banana Bread", "Coffee Cake Cinnamon Loaf", "Plain Croissant", "Blueberry Loaf", "Home Made Large Chocolate Chip Cookie"],
+            "Iced Teas": ["Iced Black Tea", "Iced Green Tea", "Wild Berry Hisbiscus Iced Tea", "Iced Tea Lemonade", "Fruit Tea Shaker", "Iced Chai Latte"],
+            "Coffee & Espresso & Hot Chocolate": ["Peet's Decaf Coffee", "Peet's Coffee", "Americano", "Cappuccino", "Pumpkin Latte", "Caffe Latte", "Vanilla Latte", "Caramel Macchiato", "Caffe Mocha", "White Chocolate Mocha", "Hot Chocolate", "Iced Caffe Americano", "Espresso"],
+            "Teas Non-Coffee": ["Black, Green or Herbal Tea", "Chai Latte"],
+            "Cold Brew & Signature Beverage": ["Cold Brew", "Cold Brew Oat Latte", "The Black Tie", "Matcha Latte", "Iced Caffe Americano"],
+            "Frappe Blended Beverages": ["Mocha Frappe", "Caramel Frappe", "Matcha Frappe"],
+            "Yogurt, Fruit, Parfaits": ["Mixed Fruit Cup", "Grape Cup", "Strawberry Parfait", "Overnight Oats with Chia Seeds"]
+        },
+        "Einstein Bros Bagels": {
+            "Bagels": ["Bagel", "Bagel with Shmear", "Bagel with Peanut Butter", "Bagel with PB&J", "Bagel with Jelly", "Bagel with Butter", "Avocado Toast"],
+            "Classic Egg Sandwiches": ["Egg, Cheese & Bacon Sandwich", "Turkey Sausage & Cheddar Egg Sandwich", "Ham & Swiss Egg Sandwich", "Egg & Cheese Sandwich"],
+            "Signature Sandwiches": ["Farmhouse Egg Sandwich", "Big Breakfast Burrito", "Garden Avocado", "All Nighter Sandwich"],
+            "Egg White Sandwich": ["Bacon, Avocado & Tomato Egg White", "Sante Fe Egg White Sandwich"],
+            "Deli Lunch": ["Nova Lox & Bagel", "Turkey B.A.T Sandwich", "Tasty Turkey Sandwich", "Avocado Veg Out"],
+            "Deli Selects": ["Turkey & Cheddar Deli Sandwich", "Ham & Swiss Deli Sandwich", "Chicken Salad Deli Sandwich"],
+            "Hot and Toasty": ["Pepperoni & Chicken Sandwich", "Pizza bagel", "Spicy Chicken Ciabatta Sandwich", "Veggie Melt on Diabatta", "Albuquerque Turkey Sandwich"],
+            "Desserts": ["Muffin", "Chocolate Chip Cookie", "Chocolate Chunk Cookie Poppers", "Twice-Baked Hash Brown", "Strawberry & Cream Strudel", "Apple Pie Pastry", "Cinnamon Bliss Roll"],
+            "Hot Drinks": ["Coffee to Go", "Hot Chocolate", "Fresh-Brewed Coffee", "Mocha", "Caramel Macchiato", "Latte", "Chai Tea Latte", "Americano", "Cappuccino", "Vanilla Latte", "Hot Tea"],
+            "Cold Drinks": ["Cold Brew", "Vainlla Cream Cold Brew", "Caramel Cream Cold Brew", "Chocolate Cream Cold Brew", "Iced Mocha", "Iced Caramel Macchiato", "Iced Latte", "Iced Chai Tea latte", "Iced Vanilla Latte", "Iced Americano", "Iced Cappuccino", "Iced Tea", "Espresso"],
+            "Frozen & Blended Drinks": ["Vanilla Cold Brew Shake", "Caramel Cold Brew Shake", "Chocolate Cold Brew Shake", "Coffee Free Chocolate Cold Brew Shake", "Coffee Free Caramel Cold Brew Shake", "Coffee Free Vanilla Cold Brew Shake", "Coffee Free Cold Brew Shake", "Strawberry Banana Smoothie"],
+            "Grab & Go": ["Chicken & Bacon Caesar Wrap", "California Turkey Club Wrap"],
+            "Grab & Go Drinks": ["Lemonade", "Blackberry Lemonade", "White Milk", "Chocolate Milk"]
+        }
     }
 }
 

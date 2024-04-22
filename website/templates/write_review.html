@@ -19,7 +19,19 @@
         <select name="item-names" id="item-names">
             <option value=""> --  select an item -- </option>
         </select>
-        <textarea name="review" id="review" class="form-control">
+        <div class="stars">
+            <input type="radio" name="rate" id="rate-5" value="5">
+            <label for="rate-5" class="fa-solid fa-star"></label>
+            <input type="radio" name="rate" id="rate-4" value="4">
+            <label for="rate-4" class="fa-solid fa-star"></label>
+            <input type="radio" name="rate" id="rate-3" value="3">
+            <label for="rate-3" class="fa-solid fa-star"></label>
+            <input type="radio" name="rate" id="rate-2" value="2">
+            <label for="rate-2" class="fa-solid fa-star"></label>
+            <input type="radio" name="rate" id="rate-1" value="1">
+            <label for="rate-1" class="fa-solid fa-star"></label>
+        </div>
+        <textarea name="review" id="review" class="form-control" placeholder="Add comments">
         </textarea>
         <br />
         <div align="center">
