@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title%}Home{% endblock%}
+{% block content%}
+<! start of carousel >
+    <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active background a"></div>
+            <div class="item background b"></div>
+            <div class="item background c"></div>
+        </div>
+    </div>
+
+    <div class="covertext">
+        <div class="col-lg-10" style="float:none; margin:0 auto;">
+            <h1 class="title">Commonwealth Ave</h1>
+            <h3 class="subtitle">Our entire campus on one street!</h3>
+        </div>
+        <div class="col-xs-12 explore">
+            <a href="#"><button type="button" class="btn btn-lg explorebtn">EXPLORE FOOD</button></a>
+        </div>
+    </div>
+
+</div>
+<! end of carousel >
+{%endblock%}

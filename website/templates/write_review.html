@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block title%}Write a review{% endblock%}
+{% block content%}
+<div class="container">
+    <form method="POST">
+        <label for="location">Choose the location:</label>
+        <select name="location-names" id="location-names">
+            <option value=""> -- select a location -- </option>
+        </select>
+        <label for="name" id="vendor-name">Choose the name of the vendor</label>
+        <select name="vendor-names" id="vendor-names">
+            <option value=""> -- select a vendor -- </option>
+        </select>
+        <label for="category" id="category">Choose the category</label>
+        <select name="category-names" id="category-names">
+            <option value=""> -- select a category -- </option>
+        </select>
+        <label for="item" id="item">Choose the name of the item</label>
+        <select name="item-names" id="item-names">
+            <option value=""> --  select an item -- </option>
+        </select>
+        <textarea name="review" id="review" class="form-control">
+        </textarea>
+        <br />
+        <div align="center">
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+        </div>
+    </form>
+</div>
+
+{%endblock%}
