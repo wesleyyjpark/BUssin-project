@@ -3,11 +3,28 @@
 {% block content%}
 
 <div class="container">
+<!--<button class="btn" id="remove-button" onclick="">Remove a review</button>-->
+{% if remove == false%}
+<form method="POST">
+    <button name="remove-button" id="remove-button" value="clicked">Remove a review</button>
+</form>
+{% endif%}
+<form method="POST">
     <ul class="list-group list-group-flush" id="reviews">
         {% for review in user.reviews %}
-        <li class="list-group-item">{{ review.location, review.vendor, review.category, review.item, review.rating, review.comments }}</li>
+        {% if remove == true%}
+        <input type="checkbox" value={{review.id}} name="check" id="check">
+        {% endif%}
+            <li class="list-group-item">
+                {{ review.location, review.vendor, review.category, review.item, review.rating, review.comments }}
+            </li>
         {% endfor%}
     </ul> 
+    {% if remove == true%}
+    <button type="submit" name="cancel" id="cancel" value="clicked">Cancel</button>
+    <button type="submit" name="remove" id="cancel" value="clicked">Remove</button>
+    {% endif%}
+</form>
 </div>
 
 {% endblock%}

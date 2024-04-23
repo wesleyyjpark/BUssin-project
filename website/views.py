@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash
 from flask_login import login_required, current_user
 from .models import Review
 from . import db
-from .foodRatings import addNewRating
+from .foodRatings import addNewRating, removeRating
 import sqlite3
 
 views = Blueprint('views', __name__)
@@ -13,7 +13,7 @@ def home():
 
 @views.route('/reviews')
 def reviews():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('ratings.db')
     cur = conn.cursor()
     cur.execute("SELECT * FROM ratings")
     data = cur.fetchall()
@@ -45,4 +45,24 @@ def write_review():
 
 @views.route('/my-reviews', methods=['GET', 'POST'])
 def my_reviews():
-    return render_template("./my_reviews.html", user=current_user)
+    remove = False
+    if request.method == 'POST':
+        if request.form.get("remove-button") == 'clicked':
+            remove = True
+        elif request.form.get("cancel") == 'clicked':
+            remove= False
+        elif request.form.get("remove") == 'clicked':
+            data = request.form.getlist("check")
+            data = request.form.getlist("check")
+            for i in data:
+                review = Review.query.filter_by(id=i).first()
+                location = review.location
+                vendor = review.vendor
+                category = review.category
+                item = review.item
+                rating = review.rating
+                removeRating(location, vendor, category, item, rating)
+                Review.query.filter_by(id = i).delete()
+                db.session.commit()
+            remove = False
+    return render_template("./my_reviews.html", user=current_user, remove=remove)
