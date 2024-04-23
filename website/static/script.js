@@ -66,6 +66,11 @@ var selections = {
             "Frozen & Blended Drinks": ["Vanilla Cold Brew Shake", "Caramel Cold Brew Shake", "Chocolate Cold Brew Shake", "Coffee Free Chocolate Cold Brew Shake", "Coffee Free Caramel Cold Brew Shake", "Coffee Free Vanilla Cold Brew Shake", "Coffee Free Cold Brew Shake", "Strawberry Banana Smoothie"],
             "Grab & Go": ["Chicken & Bacon Caesar Wrap", "California Turkey Club Wrap"],
             "Grab & Go Drinks": ["Lemonade", "Blackberry Lemonade", "White Milk", "Chocolate Milk"]
+        },
+        "Subway - Warren Towers": {
+            "Footlong Sidekicks": ["Footlong Aunite Anne's Pretzel", "Footlong Cinnabon Churro"],
+            "Breakfast": ["Steak, Egg & Cheese- Footlong", "Steak, Egg & Cheese- 6 Inch", "Black Forest Ham, Egg & cheese- Footlong", "Black Forest Ham, Egg & Cheese- 6 Inch", "Bacon, Egg & Cheese- Footlong", "Bacon, Egg & Cheese- 6 Inch", "Egg & Cheese- Footlong", "Egg & Cheese- 6 Inch"],
+            "Subway Series 6 Inch Subs": ["#1 The Philly", "#2 The Outlaw", "#3 The Monster", "#4 Supreme Meats", "#6 THe Boss", "#7 THe MexiCali", "#8 The Great Garlic", "#10 THe All-American Club", "#11 Subway Club", "#12 Turkey Cali-Club", "#15 Titan Turkey", "#16 All-Pro Sweet Onion Teriyaki", "#17 Garlic Roast Beef", "#18 Ultimate BMT", "#19 Pickleball Club", "#20 Elite Chicken Bacon Ranch", "#23 Hot Shot Italiano", "#30 The Beast", "#99 Grand Slam Ham"]
         }
     }
 }
