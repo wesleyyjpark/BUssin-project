@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block title%}My Reviews{% endblock%}
+{% block content%}
+
+<div class="container">
+    <ul class="list-group list-group-flush" id="reviews">
+        {% for review in user.reviews %}
+        <li class="list-group-item">{{ review.location, review.vendor, review.category, review.item, review.rating, review.comments }}</li>
+        {% endfor%}
+    </ul> 
+</div>
+
+{% endblock%}

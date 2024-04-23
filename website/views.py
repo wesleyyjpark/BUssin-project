@@ -42,3 +42,7 @@ def write_review():
             flash('Review submitted!', category='success')
     
     return render_template('./write_review.html', user=current_user)
+
+@views.route('/my-reviews', methods=['GET', 'POST'])
+def my_reviews():
+    return render_template("./my_reviews.html", user=current_user)

@@ -43,6 +43,7 @@
             <a href="#">About</a>
             <a href="/reviews">Food Reviews</a>
             {% if user.is_authenticated %}
+            <a href="/my-reviews">My Reviews</a>
             <a href="/logout">Logout</a>
             {% else%}
             <a href="/login">Login</a>
