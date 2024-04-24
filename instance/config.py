@@ -1,6 +1,5 @@
 SECRET_KEY ='random_key'
 SQLALCHEMY_DATABASE_URI='sqlite:///database.db'
-
 MAIL_SERVER='smtp-mail.outlook.com'
 MAIL_PORT=587
 MAIL_USERNAME='BUssin.supp0rt@outlook.com'

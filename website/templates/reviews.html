@@ -2,16 +2,9 @@
 {% block title%}Food Reviews{% endblock%}
 {%block content%}
 <div class="container">
-{% if user.is_authenticated%}
-    <div class="button-container">
-        <a href="./write-review">
-            <button align="center" type="button">Write a review</button>
-        </a>
-    </div>
-    {% endif%}
     <ul class="list-group list-group-flush" id="reviews">
         {% for review in data %}
-        <li class="list-group-item">{{ review[0], review[1], review[2], review[3], review[4] }}</li>
+        <li class="list-group-item">{{ review.location, review.vendor, review.category, review.item, review.rating|round(1) }}</li>
         {% endfor%}
     </ul> 
 </div>

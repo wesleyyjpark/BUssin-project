@@ -10,15 +10,6 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
-    #app.config["MAIL_SERVER"] = "smtp-mail.outlook.com"
-    #app.config["MAIL_PORT"] = 587
-    #app.config["MAIL_USERNAME"] = 'BUssin.supp0rt@outlook.com'
-    #app.config["MAIL_PASSWORD"] = 'chaewonfan69'
-    #app.config["MAIL_USE_TLS"] = True
-    #app.config["MAIL_USE_SSL"] = False
-    #app.config['SECRET_KEY'] = 'key'
-    #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    #app.config.from_object('config')
     app.config.from_pyfile('config.py')
     mail.init_app(app)
     db.init_app(app)

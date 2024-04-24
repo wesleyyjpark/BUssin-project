@@ -3,7 +3,11 @@
 {% block content%}
 
 <div class="container">
-<!--<button class="btn" id="remove-button" onclick="">Remove a review</button>-->
+    <div class="button-container">
+        <a href="./write-review">
+            <button align="center" type="button">Write a review</button>
+        </a>
+    </div>
 {% if remove == false%}
 <form method="POST">
     <button name="remove-button" id="remove-button" value="clicked">Remove a review</button>

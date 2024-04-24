@@ -39,3 +39,35 @@ class User(db.Model, UserMixin):
         if token_user_email != user.email:
             return None
         return user
+
+class Ratings(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(150))
+    vendor = db.Column(db.String(150))
+    category = db.Column(db.String(150))
+    item = db.Column(db.String(150))
+    rating = db.Column(db.Float)
+    count = db.Column(db.Integer)
+    
+    def updateAvg(location, vendor, category, item, rating):
+        review = Ratings.query.filter_by(location=location, vendor=vendor, category=category, item=item).first()
+        avg = review.rating
+        count = review.count
+        avg = (avg*count + rating)/(count+1)
+        count += 1
+        review.rating = avg
+        review.count = count
+        db.session.commit()
+        
+    def removeAvg(location, vendor, category, item, rating):
+        review = Ratings.query.filter_by(location=location, vendor=vendor, category=category, item=item).first()
+        avg = review.rating
+        count = review.count
+        if count == 1:
+            Ratings.query.filter_by(location=location, vendor=vendor, category=category, item=item).delete()
+        else:
+            avg = (avg*count - rating) / (count - 1)
+            count -= 1
+            review.rating = avg
+            review.count = count
+        db.session.commit()

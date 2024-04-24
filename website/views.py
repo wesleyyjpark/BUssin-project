@@ -1,9 +1,7 @@
 from flask import Blueprint, render_template, request, flash
-from flask_login import login_required, current_user
-from .models import Review
+from flask_login import current_user
+from .models import Review, Ratings
 from . import db
-from .foodRatings import addNewRating, removeRating
-import sqlite3
 
 views = Blueprint('views', __name__)
 
@@ -13,12 +11,7 @@ def home():
 
 @views.route('/reviews')
 def reviews():
-    conn = sqlite3.connect('ratings.db')
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM ratings")
-    data = cur.fetchall()
-    cur.close()
-    conn.close()
+    data = Ratings.query.all()
     return render_template('./reviews.html', user=current_user, data=data)
 
 @views.route('/write-review', methods=['GET', 'POST'])
@@ -36,8 +29,12 @@ def write_review():
             flash('Please select a rating', category='error')
         else:
             new_review = Review(location=location, vendor=vendor, category=category, item=item, rating=int(rating), comments=comment, user_id=current_user.id)
-            db.session.add(new_review)
-            addNewRating(location, vendor, category, item, int(rating))
+            if Ratings.query.filter_by(location=location, vendor=vendor, category=category, item=item).first():
+                Ratings.updateAvg(location=location, vendor=vendor, category=category, item=item, rating=int(rating))
+            else:
+                new_rating = Ratings(location=location, vendor=vendor, category=category, item=item, rating=int(rating), count=1)
+                db.session.add(new_rating)
+            db.session.add(new_review) 
             db.session.commit()
             flash('Review submitted!', category='success')
     
@@ -61,7 +58,7 @@ def my_reviews():
                 category = review.category
                 item = review.item
                 rating = review.rating
-                removeRating(location, vendor, category, item, rating)
+                Ratings.removeAvg(location=location, vendor=vendor, category=category, item=item, rating=rating)
                 Review.query.filter_by(id = i).delete()
                 db.session.commit()
             remove = False
