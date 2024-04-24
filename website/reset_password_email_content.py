@@ -6,7 +6,7 @@ reset_password_email_html_content="""
     <a href="{{ reset_password_url }}">click here</a>
 </p>
 <p>
-    Alternatively, you can paste the following link in your browser's address bad: <br>
+    Alternatively, you can paste the following link in your browser's address bar: <br>
     {{ reset_password_url }}
 </p>
 <p>If you have not requested a password reset, be careful of sharing your email with others</p>
